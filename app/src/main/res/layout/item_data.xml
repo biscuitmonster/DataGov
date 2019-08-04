@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+                name="itemData"
+                type="com.jacob.datagov.viewmodel.ItemDataViewModel"/>
+    </data>
+    <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+        <ImageView
+                android:id="@+id/btnDrop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:visibility="@{safeUnbox(itemData.isDecrease) ? View.VISIBLE : View.INVISIBLE}"
+                android:src="@drawable/icon_arrow_down"/>
+        <TextView
+                android:id="@+id/treeType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{itemData.quarter}"/>
+
+        <TextView
+                android:id="@+id/treeLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:text="@{itemData.volume}"/>
+    </LinearLayout>
+</layout>
