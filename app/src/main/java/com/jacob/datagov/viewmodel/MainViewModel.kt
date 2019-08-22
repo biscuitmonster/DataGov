@@ -27,7 +27,7 @@ class MainViewModel: BaseViewModel(){
 
     fun init(context: Context){
         this.context = context
-        date.postValue("bitch")
+
         ApiClient.create(context).getActionData()
             .enqueue(object : Callback<ResponseGetAction> {
                 override fun onResponse(
